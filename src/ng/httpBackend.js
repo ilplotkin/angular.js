@@ -69,7 +69,7 @@ function createHttpBackend($browser, XHR, $browserDefer, callbacks, rawDocument)
       // response is in the cache. the promise api will ensure that to the app code the api is
       // always async
       xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
+        if (xhr && xhr.readyState == 4) {
           var responseHeaders = null,
               response = null;
 
